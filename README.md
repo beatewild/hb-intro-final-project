@@ -19,8 +19,8 @@ Wine - $6.50
 
 The tipp options are: 15%, 20%, 25%
 
-#Making a list of the items plus price
-#Create a function to calculate the sum
-#Calculate tax
-#Calculate tip
-#Add tax and tip
+- Making a list of the items plus price
+- Create a function to calculate the sum
+- Calculate tax
+- Calculate tip
+- Add tax and tip
