@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# tic-tac-toe game
-=======
-# hb-intro-final-project
-tic-tac-toe-game
+Description of the tic-tac-toe game:
 
-delete the old stuff
->>>>>>> 8e03156bfe98833aa1882138b9c8010c3816159b
+Tic-tac-toe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.
