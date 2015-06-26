@@ -39,11 +39,17 @@ for i in range(len(food_choice_list)):
 
 answer=0
 for e in range(len(food_number_list)):
-	print food_number_list[e]	
-	# answer+=food_number_list[e]*food_choice_list[e]
+	print e, "is e"
+	print food_number_list[e], "is food_number_list[e]"	
+
+
+answer = [float(food_choice_list) * float(food_number_list) for food_choice_list,food_number_list in zip(food_choice_list,food_number_list)]
+
 
 print "The answer is", answer
 
+
+'''
 items = []
 while(True):
 	drink_choice = raw_input("What did you drink? ")
@@ -53,7 +59,7 @@ while(True):
 		break	
 	else:
 		items.append(item)
-
+'''
 
 
 
