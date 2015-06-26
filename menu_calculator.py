@@ -9,8 +9,8 @@
 #print "You have to pay", total, "Dollar - included", tip_choice, "%","tip."
 
 
-food = {"French Fries":3.50, "Hamburger":5.50, "Hotdog":4.50, "Chicken Salad":9.50, "Pizza":14.00}
-drink = {"Soda":1.75, "Coffee":2.50, "Milk Shake":4.25, "Beer":4.50, "Wine":6.50}
+food = {"French Fries":3.50, "Hamburger":5.50, "Hotdog":4.50, "Salad":9.50, "Pizza":14.00, "Tiramisu":6.25, "Ice Cream":4.75}
+drink = {"Soda":1.75, "Coffee":2.50, "Milk Shake":4.25, "Beer":4.50, "Wine":6.50, "Gin":5.75, "Tea":2.25}
 tip = {"15":1.15,"20":1.20,"25":1.25}
 
 
@@ -74,4 +74,10 @@ total_tax_tip = total_tax * tip[tip_choice]
 
 print "You have to pay", total_tax_tip, "Dollars - included 8.75","%","tax and", tip_choice, "%","tip."
 
+
+
+
 #Question: How to receive only two decimals after the coma? float? .2f?
+
+
+
