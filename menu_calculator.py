@@ -17,6 +17,7 @@ drink = {"Soda":1.75, "Coffee":2.50, "Milk Shake":4.25, "Beer":4.50, "Wine":6.50
 tip = {"15":1.15,"20":1.20,"25":1.25}
 
 
+
 food_choice_list = []
 food_number_list = []
 items = []
@@ -33,13 +34,6 @@ while(True):
 
 for i in range(len(food_choice_list)):
 	food_choice_list[i]=food[food_choice_list[i]]
-	print i,"is i"
-	print food_choice_list[i],"is food_choice_list[i]"
-
-total_food=0
-for e in range(len(food_number_list)):
-	print e, "is e"
-	print food_number_list[e], "is food_number_list[e]"	
 
 
 total_food = [float(food_choice_list) * float(food_number_list) for food_choice_list,food_number_list in zip(food_choice_list,food_number_list)]
@@ -63,13 +57,6 @@ while(True):
 
 for i in range(len(drink_choice_list)):
 	drink_choice_list[i]=drink[drink_choice_list[i]]
-	print i,"is i"
-	print drink_choice_list[i],"is drink_choice_list[i]"
-
-total_drink=0
-for e in range(len(drink_number_list)):
-	print e, "is e"
-	print drink_number_list[e], "is drink_number_list[e]"	
 
 
 total_drink = [float(drink_choice_list) * float(drink_number_list) for drink_choice_list,drink_number_list in zip(drink_choice_list,drink_number_list)]
