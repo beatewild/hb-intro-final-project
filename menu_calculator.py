@@ -20,6 +20,9 @@ items = []
 while(True):
 	food_choice = raw_input("Which food did you eat? ").lower() 
 	food_choice = food_choice.replace(" ","")
+	if (food_choice not in food):
+		food_choice = raw_input ("This is no food from our menu. We have fries, hamburger, hotdog, burrito, salad, pizza, tiramisu, icecream. What did you eat? ").lower()
+		food_choice = food_choice.replace(" ","")
 	food_number = raw_input("How many? ").lower()
 	food_number = food_number.replace(" ","")
 	item = raw_input("Did you eat more food? yes or no: ").lower()
@@ -49,6 +52,9 @@ items = []
 while(True):
 	drink_choice = raw_input("What did you drink? ").lower()
 	drink_choice = drink_choice.replace(" ","")
+	if (drink_choice not in drink):
+		drink_choice = raw_input ("This is no drink from our menu. We have soda, tea, coffee, milkshake, beer, wine, gin. What did you drink? ").lower()
+		drink_choice = drink_choice.replace(" ","")
 	drink_number = raw_input("How many? ").lower()
 	drink_number = drink_number.replace(" ","")
 	item = raw_input("Did you have more drinks? yes or no: ").lower()
@@ -74,6 +80,9 @@ total_net = sum(total_food+total_drink)
 
 tip_choice = raw_input("Choose the tip: 15 or 20 or 25 percent: ")
 tip_choice = tip_choice.replace(" ","")
+if (tip_choice not in tip):
+	tip_choice = raw_input ("This is not a tip option. Please choose 15 or 20 or 25: ")
+	tip_choice = tip_choice.replace(" ","")
 
 #print "The total of your check is", total_net, "dollars."
 
