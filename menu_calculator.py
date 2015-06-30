@@ -9,8 +9,8 @@
 #print "You have to pay", total, "Dollar - included", tip_choice, "%","tip."
 
 
-food = {"french fries":3.50, "hamburger":5.50, "hotdog":4.50, "burrito":6.75, "salad":9.50, "pizza":14.00, "tiramisu":6.25, "ice cream":4.75}
-drink = {"soda":1.75, "tea":2.25, "coffee":2.75, "milk shake":4.25, "beer":4.50, "wine":6.50, "gin":5.75}
+food = {"fries":3.50, "hamburger":5.50, "hotdog":4.50, "burrito":6.75, "salad":9.50, "pizza":14.00, "tiramisu":6.25, "icecream":4.75}
+drink = {"soda":1.75, "tea":2.25, "coffee":2.75, "milkshake":4.25, "beer":4.50, "wine":6.50, "gin":5.75}
 tip = {"15":1.15,"20":1.20,"25":1.25}
 
 
@@ -18,7 +18,7 @@ food_choice_list = []
 food_number_list = []
 items = []
 while(True):
-	food_choice = raw_input("French Fries, Hamburger, Hotdog, Burrito, Salad, Pizza, Tiramisu, Ice Cream: Which food did you eat? ").lower() 
+	food_choice = raw_input("Which food did you eat? ").lower() 
 	food_choice = food_choice.replace(" ","")
 	food_number = raw_input("How many? ").lower()
 	food_number = food_number.replace(" ","")
@@ -27,9 +27,12 @@ while(True):
 	food_choice_list.append(food_choice)
 	food_number_list.append(food_number)
 	if (item == "no"):
-		break	
-	else:
+		break
+	elif (item == "yes"):
 		items.append(item)
+	else:
+		break
+		
 
 for i in range(len(food_choice_list)):
 	food_choice_list[i]=food[food_choice_list[i]]
@@ -44,7 +47,7 @@ drink_choice_list = []
 drink_number_list = []
 items = []
 while(True):
-	drink_choice = raw_input("Soda, Tea, Coffee, Milk Shake, Beer, Wine, Gin: What did you drink? ").lower()
+	drink_choice = raw_input("What did you drink? ").lower()
 	drink_choice = drink_choice.replace(" ","")
 	drink_number = raw_input("How many? ").lower()
 	drink_number = drink_number.replace(" ","")
@@ -53,9 +56,11 @@ while(True):
 	drink_choice_list.append(drink_choice)
 	drink_number_list.append(drink_number)
 	if (item == "no"):
-		break	
-	else:
+		break
+	elif (item == "yes"):
 		items.append(item)
+	else:
+		break
 
 for i in range(len(drink_choice_list)):
 	drink_choice_list[i]=drink[drink_choice_list[i]]
@@ -67,7 +72,7 @@ total_drink = [float(drink_choice_list) * float(drink_number_list) for drink_cho
 
 total_net = sum(total_food+total_drink)
 
-tip_choice = raw_input("15 or 20 or 25: Choose the tip in percent: ")
+tip_choice = raw_input("Choose the tip: 15 or 20 or 25 percent: ")
 tip_choice = tip_choice.replace(" ","")
 
 #print "The total of your check is", total_net, "dollars."
