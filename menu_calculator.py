@@ -34,7 +34,13 @@ while(True):
 	elif (item == "yes"):
 		items.append(item)
 	else:
-		break
+		item = raw_input ("What was that? Give me a 'yes' or a 'no': ").lower()
+		item = item.replace(" ","")
+		if (item == "no"):
+			break
+		elif (item == "yes"):
+			items.append(item)
+		
 		
 
 for i in range(len(food_choice_list)):
@@ -66,7 +72,12 @@ while(True):
 	elif (item == "yes"):
 		items.append(item)
 	else:
-		break
+		item = raw_input ("What was that? Give me a 'yes' or a 'no': ").lower()
+		item = item.replace(" ","")
+		if (item == "no"):
+			break
+		elif (item == "yes"):
+			items.append(item)
 
 for i in range(len(drink_choice_list)):
 	drink_choice_list[i]=drink[drink_choice_list[i]]
@@ -94,5 +105,6 @@ total_tax = total_net * 1.0875
 total_tax_tip = total_tax * tip[tip_choice]
 
 print "You have to pay", "%.2f" % total_tax_tip, "Dollars. 8.75","%","tax and", tip_choice, "%","tip included. Thanks for your visit."
+
 
 
