@@ -100,12 +100,31 @@ if (tip_choice not in tip):
 #print "The total of your check is", total_net, "dollars."
 
 total_tax = total_net * 1.0875
+tax_only = total_tax - total_net
+
+#print "The tax is " "%.2f" % tax_only
 
 
 #print "The total is", total_net, "plus 8.75 percent tax is", total_tax, "Dollars."
 
 total_tax_tip = total_tax * tip[tip_choice]
+tip_only = total_tax_tip - total_tax
 
+#print "The tip is " "%.2f" % tip_only
+
+'''
 print name+ ", you have to pay", "%.2f" % total_tax_tip, "Dollars, including 8.75","%","tax and", tip_choice, "%","tip. Thanks for your visit."
+'''
+
+print "													"
+print "----           		RECEIPT			----"
+print "													"
+print "----         		MEAL 	- $", "%.2f" % total_net,"	----"
+print "----		8.75","%"," TAX 	- $", "%.2f" % tax_only,"	----"
+print "----		", tip_choice, "%", "	TIP 	- $", "%.2f" % tip_only,"	----"
+print "----        		TOTAL 	- $", "%.2f" % total_tax_tip,"	----"
+print "													"
+print "Thanks for your visit,", name
+print "													"
 
 
