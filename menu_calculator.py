@@ -1,12 +1,30 @@
 #tax = 8.75% #1.0875
 #tip = 15%, 20%, 25%
 
+#name = raw_input ("What is your name: ")
+#food_choice = raw_input ("Which food did you eat? ")
+#drink_choice = raw_input ("What did you drink? ")
+#tip_choice = raw_input("15 or 20 or 25: Choose the tip in percent: ")
+#total = ((food[food_choice] + drinks[drink_choice]) * 1.0875) * tip[tip_choice]
+#print "You have to pay", total, "Dollar - included", tip_choice, "%","tip."
+
+
 food = {"fries":3.50, "hamburger":5.50, "hotdog":4.50, "burrito":6.75, "salad":9.50, "pizza":14.00, "tiramisu":6.25, "icecream":4.75}
 drink = {"soda":1.75, "tea":2.25, "coffee":2.75, "milkshake":4.25, "beer":4.50, "wine":6.50, "gin":5.75}
 tip = {"15":1.15,"20":1.20,"25":1.25}
 
 
-name = raw_input ("Welcome to the Menu Calculator! What is your name? ")
+
+print " 				"
+print "Welcome to the Menu Calculator! Today we have the following offers:"
+print "Fries 			3.50 $"
+print "Hamburger 		5.50 $" 
+print "Hotdog 			4.50 $"
+print "Burrito 		6.75 $" 
+print "Salad 			8.50 $" 
+print "Pizza 			9.75 $" 
+print "Tiramisu 		6.25 $" 
+print "Icecream 		4.75 $"
 
 food_choice_list = []
 food_number_list = []
@@ -43,6 +61,18 @@ for i in range(len(food_choice_list)):
 
 total_food = [float(food_choice_list) * float(food_number_list) for food_choice_list,food_number_list in zip(food_choice_list,food_number_list)]
 
+#print "The total of food is", sum(total_food), "dollars."
+
+print " 				"
+print "These are our drinks:"
+print "Soda 			1.75 $"
+print "Tea 			2.25 $" 
+print "Coffee 			2.75 $" 
+print "Milkshake 		4.25 $" 
+print "Beer 			4.00 $" 
+print "Wine 			5.25 $" 
+print "Gin 			5.75 $"
+
 
 drink_choice_list = []
 drink_number_list = []
@@ -77,27 +107,33 @@ for i in range(len(drink_choice_list)):
 
 total_drink = [float(drink_choice_list) * float(drink_number_list) for drink_choice_list,drink_number_list in zip(drink_choice_list,drink_number_list)]
 
+#print "The total of drinks is", sum(total_drink), "dollars."
 
 total_net = sum(total_food+total_drink)
 
+print " 				"
 tip_choice = raw_input("Choose the tip: 15 or 20 or 25 percent: ")
 tip_choice = tip_choice.replace(" ","")
 if (tip_choice not in tip):
 	tip_choice = raw_input ("This is not a tip option. Please choose 15 or 20 or 25: ")
 	tip_choice = tip_choice.replace(" ","")
 
+#print "The total of your check is", total_net, "dollars."
 
 total_tax = total_net * 1.0875
 tax_only = total_tax - total_net
 
+#print "The tax is " "%.2f" % tax_only
+
+
+#print "The total is", total_net, "plus 8.75 percent tax is", total_tax, "Dollars."
 
 total_tax_tip = total_tax * tip[tip_choice]
 tip_only = total_tax_tip - total_tax
 
+#print "The tip is " "%.2f" % tip_only
 
-'''
-print name+ ", you have to pay", "%.2f" % total_tax_tip, "Dollars, including 8.75","%","tax and", tip_choice, "%","tip. Thanks for your visit."
-'''
+
 
 print "													"
 print "----           		RECEIPT			----"
@@ -107,7 +143,10 @@ print "----		8.75","%"," TAX 	- $", "%.2f" % tax_only,"	----"
 print "----		", tip_choice, "%", "	TIP 	- $", "%.2f" % tip_only,"	----"
 print "----        		TOTAL 	- $", "%.2f" % total_tax_tip,"	----"
 print "													"
-print "Thanks for your visit,", name
+print "Enjoy your meal! Thanks for your visit!"
 print "													"
+
+
+
 
 
