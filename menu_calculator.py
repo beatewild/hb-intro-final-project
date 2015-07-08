@@ -1,7 +1,5 @@
-food = {"fries":[3.50, 110], "hamburger":[5.50, 550], "hotdog":[4.50, 315], "burrito":[6.75, 410], "salad":[9.50, 150], "pizza":[9.75, 1680], "tiramisu":[6.25, 590], "icecream":[4.75, 70]}
+food = {"fries":[3.50, 110], "hamburger":[5.50, 550], "hotdog":[4.50, 315], "burrito":[6.75, 410], "salad":[9.50, 150], "pizza":[9.75, 1280], "tiramisu":[6.25, 590], "icecream":[4.75, 70]}
 drink = {"soda":[1.75, 180], "tea":[2.25,35], "coffee":[2.75,60], "milkshake":[4.25,490], "beer":[4.00,150], "wine":[5.25,120], "gin":[5.75,90]}
-tip = {"15":1.15,"20":1.20,"25":1.25}
-
 
 
 print " 				"
@@ -17,30 +15,29 @@ print "Icecream 		4.75 $"
 
 food_choice_list = []
 food_number_list = []
-items = []
-while(True):
-	food_choice = raw_input("Which food do you want to eat? ").lower() 
+food_choice = raw_input("Which food do you want to eat? ").lower() 
+food_choice = food_choice.replace(" ","")
+if (food_choice not in food):
+	food_choice = raw_input ("This is not an item from our menu. Please look again and tell me what you wanna eat? ").lower()
 	food_choice = food_choice.replace(" ","")
-	if (food_choice not in food):
-		food_choice = raw_input ("This is not an item from our menu. We have fries, hamburger, hotdog, burrito, salad, pizza, tiramisu, icecream. What do you choose? ").lower()
+food_number = raw_input("How many? ").lower()
+food_number = food_number.replace(" ","")
+food_choice_list.append(food_choice)
+food_number_list.append(food_number)
+
+while(True):
+	food_choice = raw_input("Do you want more food? Choose something or type 'no': ").lower()
+	food_choice = food_choice.replace(" ","")
+	if (food_choice == "no"):
+		break
+	elif (food_choice not in food):
+		food_choice = raw_input ("This is not an item from our menu. Please look again and tell me what you wanna eat? ").lower()
 		food_choice = food_choice.replace(" ","")
+	else:
+		food_choice_list.append(food_choice)
 	food_number = raw_input("How many? ").lower()
 	food_number = food_number.replace(" ","")
-	item = raw_input("Do you want more food? 'yes' or 'no': ").lower()
-	item = item.replace(" ","")
-	food_choice_list.append(food_choice)
 	food_number_list.append(food_number)
-	if (item == "no"):
-		break
-	elif (item == "yes"):
-		items.append(item)
-	else:
-		item = raw_input ("What was that? Please give me a 'yes' or a 'no': ").lower()
-		item = item.replace(" ","")
-		if (item == "no"):
-			break
-		elif (item == "yes"):
-			items.append(item)
 
 for i in range(len(food_choice_list)):
 	food_choice_list[i]=food[food_choice_list[i]]
@@ -81,30 +78,29 @@ print "Gin 			5.75 $"
 
 drink_choice_list = []
 drink_number_list = []
-items = []
-while(True):
-	drink_choice = raw_input("What do you want to drink? ").lower()
+drink_choice = raw_input("What do you want to drink? ").lower()
+drink_choice = drink_choice.replace(" ","")
+if (drink_choice not in drink):
+	drink_choice = raw_input ("This is not a drink from our menu. Please look again and tell me what you wanna drink ? ").lower()
 	drink_choice = drink_choice.replace(" ","")
-	if (drink_choice not in drink):
-		drink_choice = raw_input ("This is not a drink from our menu. We have soda, tea, coffee, milkshake, beer, wine, gin. What do you want? ").lower()
+drink_number = raw_input("How many? ").lower()
+drink_number = drink_number.replace(" ","")
+drink_choice_list.append(drink_choice)
+drink_number_list.append(drink_number)
+
+while(True):
+	drink_choice = raw_input("Do you want more drinks? Choose something or type 'no': ").lower()
+	drink_choice = drink_choice.replace(" ","")
+	if (drink_choice == "no"):
+		break
+	elif (drink_choice not in drink):
+		drink_choice = raw_input ("This is not a drink from our menu. Please look again and tell me what you wanna drink ? ").lower()
 		drink_choice = drink_choice.replace(" ","")
+	else:
+		drink_choice_list.append(drink_choice)
 	drink_number = raw_input("How many? ").lower()
 	drink_number = drink_number.replace(" ","")
-	item = raw_input("More drinks for you? 'yes' or 'no': ").lower()
-	item = item.replace(" ","")
-	drink_choice_list.append(drink_choice)
 	drink_number_list.append(drink_number)
-	if (item == "no"):
-		break
-	elif (item == "yes"):
-		items.append(item)
-	else:
-		item = raw_input ("What was that? Please give me a 'yes' or a 'no': ").lower()
-		item = item.replace(" ","")
-		if (item == "no"):
-			break
-		elif (item == "yes"):
-			items.append(item)
 
 
 for i in range(len(drink_choice_list)):
@@ -135,6 +131,9 @@ sum_calorie_drink = sum(calorie_drink_total)
 
 
 total_net = sum(total_food+total_drink)
+
+
+tip = {"15":1.15,"20":1.20,"25":1.25}
 
 print " 				"
 tip_choice = raw_input("Choose the tip: 15 or 20 or 25 percent: ")
@@ -167,7 +166,7 @@ print "***		This meal has", sum_calorie_all, "calories."
 print "***		Calories in food: 	", sum_calorie_food
 print "***		Calories in drinks: 	", sum_calorie_drink
 print "					"
-print "$$$ 		Anyway - enjoy your meal! Thanks for your purchase! 	$$$"
+print "$$$ 		Enjoy your meal! Thanks for your purchase! 	$$$"
 print "					"
 print "					"
 
